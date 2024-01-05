@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getContacts } from "../../redux/selectors";
-import { addContact } from "../../redux/contactsSlice";
+import { selectContacts } from "../../redux/selectors";
+import { addContact } from "../../redux/operations";
 import { nanoid } from "nanoid";
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
@@ -24,7 +24,7 @@ let userSchema = yup.object({
 
 export const ContactForm = () => {
     const dispatch = useDispatch();
-    const contacts = useSelector(getContacts);
+    const contacts = useSelector(selectContacts);
 
     const handleOnSubmit = (values, { resetForm }) => {
         if (contacts.find(contact => contact.name.toLowerCase() === values.name.toLowerCase()) === undefined) {

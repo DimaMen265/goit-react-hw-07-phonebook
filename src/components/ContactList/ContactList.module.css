@@ -20,13 +20,13 @@
 }
 
 .textItem,
-.textNoContacts,
+.textInfo,
 .tel {
   color: gray;
   font-size: 16px;
 }
 
-.textNoContacts {
+.textInfo {
   text-align: center;
 }
 
